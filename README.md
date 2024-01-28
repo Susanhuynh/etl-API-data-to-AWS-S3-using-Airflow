@@ -13,7 +13,7 @@
 > [!NOTE]
 > This project focuses on utilizing Apache Airflow to orchestrate an ETL (Extract, Transform, Load) process using data from the Stack Overflow API. The primary objective is to determine the most prominent tags on Stack Overflow for the current month. The workflow involves fetching data from the API, transforming it using Pandas, and loading the processed data into an Amazon S3 Bucket.
 
-![Data Pipeline](etl.png)
+![Data Pipeline](image/etl.png)
 
 ### Tech Stack and Knowledge
 ![Amazon S3](https://img.shields.io/badge/amazons3-white?style=flat&logo=amazons3&logoColor=white&color=%23569A31) ![Airflow](https://img.shields.io/badge/Airflow-white?style=flat&logo=apacheairflow&logoColor=white&color=%23017CEE) ![Python](https://img.shields.io/badge/Python-white?style=flat&logo=python&logoColor=white&color=%233776AB) ![SQL](https://img.shields.io/badge/mySQL-white?style=flat&logo=mysql&logoColor=white&color=%234479A1) 
@@ -33,7 +33,7 @@
     - Employing Pandas for data transformation
     - Loading the processed data into an Amazon S3 Bucket
 - The simple pipeline is described as below.
-![Data pipeline](etl.png)
+![Data pipeline](image/etl.png)
 
 2. Hands-on
 - CREATE AWS S3 BUCKET
