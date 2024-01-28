@@ -33,6 +33,7 @@
     - Employing Pandas for data transformation
     - Loading the processed data into an Amazon S3 Bucket
 - The simple pipeline is described as below.
+ 
 ![Data pipeline](image/etl.png)
 
 2. Hands-on
