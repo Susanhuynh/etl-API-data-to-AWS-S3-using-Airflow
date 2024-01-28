@@ -1,0 +1,13 @@
+[2024-01-28T15:10:43.009+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_stackoverflow_data.transform_stackoverflow_data scheduled__2023-01-26T00:00:00+00:00 [queued]>
+[2024-01-28T15:10:43.119+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_stackoverflow_data.transform_stackoverflow_data scheduled__2023-01-26T00:00:00+00:00 [queued]>
+[2024-01-28T15:10:43.121+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-01-28T15:10:43.187+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform_stackoverflow_data> on 2023-01-26 00:00:00+00:00
+[2024-01-28T15:10:43.233+0000] {standard_task_runner.py:60} INFO - Started process 1524 to run task
+[2024-01-28T15:10:43.273+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_stackoverflow_data', 'transform_stackoverflow_data', 'scheduled__2023-01-26T00:00:00+00:00', '--job-id', '1127', '--raw', '--subdir', 'DAGS_FOLDER/loading_data_to_aws_S3.py', '--cfg-path', '/tmp/tmpwxs_turh']
+[2024-01-28T15:10:43.303+0000] {standard_task_runner.py:88} INFO - Job 1127: Subtask transform_stackoverflow_data
+[2024-01-28T15:10:43.943+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_stackoverflow_data.transform_stackoverflow_data scheduled__2023-01-26T00:00:00+00:00 [running]> on host 9924936b75b5
+[2024-01-28T15:10:45.170+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='charlotte' AIRFLOW_CTX_DAG_ID='fetch_stackoverflow_data' AIRFLOW_CTX_TASK_ID='transform_stackoverflow_data' AIRFLOW_CTX_EXECUTION_DATE='2023-01-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-01-26T00:00:00+00:00'
+[2024-01-28T15:10:45.311+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-28T15:10:45.361+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=fetch_stackoverflow_data, task_id=transform_stackoverflow_data, execution_date=20230126T000000, start_date=20240128T151043, end_date=20240128T151045
+[2024-01-28T15:10:46.055+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-28T15:10:46.178+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
