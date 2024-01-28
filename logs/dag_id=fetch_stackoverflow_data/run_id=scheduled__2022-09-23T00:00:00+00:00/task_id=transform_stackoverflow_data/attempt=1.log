@@ -1,0 +1,26 @@
+[2024-01-23T18:25:30.738+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_stackoverflow_data.transform_stackoverflow_data scheduled__2022-09-23T00:00:00+00:00 [queued]>
+[2024-01-23T18:25:30.767+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_stackoverflow_data.transform_stackoverflow_data scheduled__2022-09-23T00:00:00+00:00 [queued]>
+[2024-01-23T18:25:30.770+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 6
+[2024-01-23T18:25:30.820+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform_stackoverflow_data> on 2022-09-23 00:00:00+00:00
+[2024-01-23T18:25:30.829+0000] {standard_task_runner.py:60} INFO - Started process 3343 to run task
+[2024-01-23T18:25:30.849+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fetch_stackoverflow_data', 'transform_stackoverflow_data', 'scheduled__2022-09-23T00:00:00+00:00', '--job-id', '375', '--raw', '--subdir', 'DAGS_FOLDER/loading_data_to_aws_S3.py', '--cfg-path', '/tmp/tmppsgzyy_n']
+[2024-01-23T18:25:30.856+0000] {standard_task_runner.py:88} INFO - Job 375: Subtask transform_stackoverflow_data
+[2024-01-23T18:25:31.026+0000] {task_command.py:423} INFO - Running <TaskInstance: fetch_stackoverflow_data.transform_stackoverflow_data scheduled__2022-09-23T00:00:00+00:00 [running]> on host 9924936b75b5
+[2024-01-23T18:25:31.242+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='charlotte' AIRFLOW_CTX_DAG_ID='fetch_stackoverflow_data' AIRFLOW_CTX_TASK_ID='transform_stackoverflow_data' AIRFLOW_CTX_EXECUTION_DATE='2022-09-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-09-23T00:00:00+00:00'
+[2024-01-23T18:25:31.295+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/loading_data_to_aws_S3.py", line 19, in transform_data
+    response = ti.xcom_pull('fetch_stackoverflow_data', task_ids='get_stackoverflow_data')
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+TypeError: xcom_pull() got multiple values for argument 'task_ids'
+[2024-01-23T18:25:31.361+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=fetch_stackoverflow_data, task_id=transform_stackoverflow_data, execution_date=20220923T000000, start_date=20240123T182530, end_date=20240123T182531
+[2024-01-23T18:25:31.430+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 375 for task transform_stackoverflow_data (xcom_pull() got multiple values for argument 'task_ids'; 3343)
+[2024-01-23T18:25:31.473+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-01-23T18:25:31.943+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
