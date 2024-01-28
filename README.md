@@ -2,10 +2,17 @@
 <img height="100" width="100" src="https://cdn.iconscout.com/icon/premium/png-512-thumb/etl-10518137-8480186.png?f=webp&w=256"/>
 </p>
 <h1 align="center">ETL PIPELINE FROM S3 TO REDSHIFT BY IaC</h1>
+<p align="center">
+    <img src="https://img.shields.io/badge/amazons3-white?style=flat&logo=amazons3&logoColor=white&color=%23569A31"/>
+    <img src="https://img.shields.io/badge/Airflow-white?style=flat&logo=apacheairflow&logoColor=white&color=%23017CEE"/>
+    <img src="https://img.shields.io/badge/Python-white?style=flat&logo=python&logoColor=white&color=%233776AB"/>
+    <img src="https://img.shields.io/badge/mySQL-white?style=flat&logo=mysql&logoColor=white&color=%234479A1">
+</p>
 
 ### OVERVIEW
 > [!NOTE]
-> 
+> This project focuses on utilizing Apache Airflow to orchestrate an ETL (Extract, Transform, Load) process using data from the Stack Overflow API. The primary objective is to determine the most prominent tags on Stack Overflow for the current month. The workflow involves fetching data from the API, transforming it using Pandas, and loading the processed data into an Amazon S3 Bucket.
+
 ![Data Pipeline](etl.png)
 
 ### Tech Stack and Knowledge
@@ -21,16 +28,17 @@
 
 ### Project Introduction
 1. Project Introduction
-In this project, my aim is to apply the knowledge I've acquired about Airflow. The data employed in this ETL process will be sourced from the Stack Overflow API, accessible here. The extraction revolves around the query, "What are the most prominent tags on Stack Overflow this month?" The workflow orchestrated by Airflow will involve:
+- In this project, my aim is to apply the knowledge I've acquired about Airflow. The data employed in this ETL process will be sourced from the Stack Overflow API, accessible here. The extraction revolves around the query, "What are the most prominent tags on Stack Overflow this month?" The workflow orchestrated by Airflow will involve:
     - Fetching data from the Stack Overflow API endpoint
     - Employing Pandas for data transformation
     - Loading the processed data into an Amazon S3 Bucket
-The simple pipeline is described as below.
+- The simple pipeline is described as below.
 ![Data pipeline](etl.png)
 
 2. Hands-on
 - CREATE AWS S3 BUCKET
     - Log in to AWS and search S3 and select S3 Scalable storage in the Cloud
+    ![s3](image/s3.png)
     - From S3 dashboard, click on Create Bucket
     - Enter a bucket name and AWS region
 - FETCH DATA FROM API ENDPOINT TO AWS S3 BUCKET
