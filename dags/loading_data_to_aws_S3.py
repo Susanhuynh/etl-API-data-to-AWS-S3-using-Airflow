@@ -24,8 +24,7 @@ def load_data_to_aws_s3(ti) -> None:
     df = pd.read_json(response, orient='split')
     session = boto3.Session(
         aws_access_key_id = ACCESS_KEY,
-        aws_secret_access_key = SECRET_KEY
-    )
+        aws_secret_access_key = SECRET_KEY)
 
     #Creating S3 Resource from Session
     s3_res = session.resource('s3')
